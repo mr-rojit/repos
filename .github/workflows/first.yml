@@ -1,0 +1,12 @@
+name: Not really First
+on: push
+jobs:
+  format_and_lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: display start message
+        run: echo "Formatting and Lintining in the process!!"
+
+      - name: list files
+        run: echo ls  
+      
