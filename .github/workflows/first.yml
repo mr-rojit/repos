@@ -7,9 +7,6 @@ jobs:
       - name: cloning source code
         uses: actions/checkout@v6
 
-      - name: Displaying
-        run: ls
-
       - name: display start message
         run: echo "Formatting and Lintining in the process!!"
 
@@ -23,4 +20,16 @@ jobs:
         run: |
           uv run ruff check .
           uv run ruff format --check .
+
+  create_docker_image:
+    runs-on: ubuntu-latest
+      steps:
+      - name: cloning source code
+        uses: actions/checkout@v6
+
+      - name: build docker image
+        run: docker build . 
+      
+      - name: show docker containers
+        run: docker image ls
       
