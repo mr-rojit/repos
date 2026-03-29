@@ -4,6 +4,12 @@ jobs:
   format_and_lint:
     runs-on: ubuntu-latest
     steps:
+      - name: cloning source code
+        uses: actions/checkout@v6
+
+      - name: Displaying
+        run: ls
+
       - name: display start message
         run: echo "Formatting and Lintining in the process!!"
 
