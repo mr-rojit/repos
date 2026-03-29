@@ -7,6 +7,14 @@ jobs:
       - name: display start message
         run: echo "Formatting and Lintining in the process!!"
 
-      - name: list files
-        run: echo ls  
+      - name: installing uv
+        run: pip install uv
+
+      - name: sync uv
+        run: uv sync
+      
+      - name: Run checks
+        run: |
+          uv run ruff check .
+          uv run ruff format --check .
       
